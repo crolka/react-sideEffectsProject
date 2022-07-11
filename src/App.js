@@ -8,8 +8,15 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // !!! This will run ONLY when the dependencies change!!!
-  //      Arguments: 1. () => {} - function that runs when the dependencies change
+  //      Arguments: 1. () => {
+  //                      ...
+  //                      return () => {...} - this is the cleanup funciton 
+  //                                            that runs before the state 
+  //                                            change functions run.
+  //                    } - function that runs when the dependencies change
   //                 2. []       - an array of dependencies.
+  // in this scenario, we are looking at maintaining a persistent
+  // state when the page reloads.
   useEffect(() => {
     const storedUserLogInInfo = localStorage.getItem('isLoggedIn');
 
