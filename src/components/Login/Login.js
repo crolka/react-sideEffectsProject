@@ -60,9 +60,11 @@ const Login = (props) => {
     isValid: null,
   });
 
-  // This is object destructuring. Works the same as array destructuring but only with objects. In this
-  // example, I am defining an alias because the key names are the same for each of the emailState and
+  // This is object destructuring. Works the same as array destructuring 
+  // but only with objects. In this example, I am defining an alias 
+  // because the key names are the same for each of the emailState and
   // passwordState objects.
+  // [ destructuredPropName: aliasName ]
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
